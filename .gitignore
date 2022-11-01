@@ -27,6 +27,11 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app
+
+#custom
+**/info.txt
+**/info.json
+**/workspace.xml
+**/tasks.xml
