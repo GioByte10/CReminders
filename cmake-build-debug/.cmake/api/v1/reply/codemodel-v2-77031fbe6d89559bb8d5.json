@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "CReminders",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CReminders::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CReminders-Debug-d6dc4c54cac076d967c7.json",
+					"jsonFile" : "target-CReminders-Debug-f84290b197f05ebe036c.json",
 					"name" : "CReminders",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "commands::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-commands-Debug-8a095bdcabe0beb38fc6.json",
+					"name" : "commands",
 					"projectIndex" : 0
 				}
 			]
