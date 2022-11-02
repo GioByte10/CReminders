@@ -65,7 +65,7 @@ build CMakeFiles/CReminders.dir/main.cpp.obj: CXX_COMPILER__CReminders_Debug C$:
 
 build CReminders.exe: CXX_EXECUTABLE_LINKER__CReminders_Debug CMakeFiles/CReminders.dir/main.cpp.obj
   FLAGS = -g
-  LINK_FLAGS = -static
+  LINK_FLAGS = -static -mwindows
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CReminders.dir
   POST_BUILD = cd .

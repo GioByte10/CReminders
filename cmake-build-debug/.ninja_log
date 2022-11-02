@@ -1,4 +1,7 @@
 # ninja log v5
 0	2025	6889876377656835	CMakeFiles/CReminders.dir/main.cpp.obj	86cf5dc37c47a629
-10	1224	6890505579032356	CReminders.exe	bfed037aef21c154
 7	1414	6890738732937283	CReminders.exe	1fa78d3b9600ebf
+3	3450	6891286014290340	CMakeFiles/CReminders.dir/main.cpp.obj	86cf5dc37c47a629
+3451	3884	6891286018597990	CReminders.exe	bfed037aef21c154
+3	2033	6891287013842049	CMakeFiles/CReminders.dir/main.cpp.obj	86cf5dc37c47a629
+2034	2367	6891287017145914	CReminders.exe	bfed037aef21c154
