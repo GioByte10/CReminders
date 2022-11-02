@@ -4,6 +4,6 @@ project(CReminders)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(CReminders main.cpp)
-set_target_properties(CReminders PROPERTIES LINK_FLAGS "-static -mwindows")
+set_target_properties(CReminders PROPERTIES LINK_FLAGS "-static")
 
 add_executable(commands commands.cpp)

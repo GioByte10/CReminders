@@ -227,14 +227,11 @@ std::string getDays(std::string daysLine){
 
 std::string getDuration(std::string durationLine){
 
-    std::string durationL = "";
+    std::string durationL;
 
     transform(durationLine.begin(), durationLine.end(), durationLine.begin(), ::tolower);
 
-    if(durationL.find("long") != std::string::npos || durationL.find("largo") != std::string::npos || durationL.find("larga") != std::string::npos)
-        durationL = "long";
-
-    else if(durationL.find("short") != std::string::npos || durationL.find("corto") != std::string::npos || durationL.find("corta") != std::string::npos)
+    if(durationL.find("short") != std::string::npos || durationL.find("corto") != std::string::npos || durationL.find("corta") != std::string::npos)
         durationL = "short";
 
     else
@@ -395,7 +392,7 @@ void showReminders(std::list <std::string> *notificationContent_list, const std:
     }
 }
 
-void reset_txt(std::string infoPath, std::list <std::string> *notificationContent_list, std::list <std::string> *days_list, std::list <int> *hour_list, std::list <int> *minute_list, bool english){
+void reset_txt(const std::string &infoPath, std::list <std::string> *notificationContent_list, std::list <std::string> *days_list, std::list <int> *hour_list, std::list <int> *minute_list, bool english){
 
     clearLists(notificationContent_list, days_list, hour_list, minute_list);
 
