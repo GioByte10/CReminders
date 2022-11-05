@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -50,6 +52,13 @@
 					"id" : "commands::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-commands-Debug-8a095bdcabe0beb38fc6.json",
 					"name" : "commands",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-216487733fe4be57368e.json",
+					"name" : "test",
 					"projectIndex" : 0
 				}
 			]
