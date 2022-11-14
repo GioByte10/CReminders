@@ -1,2 +1,2 @@
 *.latex linguist-detectable=false
-*.html linguist-detectable=true
+*.html linguist-detectable=false
