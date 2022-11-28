@@ -1,8 +1,11 @@
 # CReminders
 
 ![img1](cmake-build-debug/resources/img2.png?raw=true "hello")
-
-***Español*** [***abajo***](#español)
+<div align="center">
+  <a href="https://www.google.com">How to install CReminders</a> | 
+  <a href="https://www.google.com">Como instalar CReminders</a> | 
+  <a href="https://github.com/GioByte10/CReminders#español"> Español</a>
+</div>
 
 
 ## English
@@ -27,6 +30,7 @@ The way CReminders works is by adding itself, the [main](https://github.com/GioB
 | Time        | 24 hour format<br>e.g., → 16:30                                                                                                              |
 | Days        | Days in which the reminder will be active<br>e.g., → monday, wednesday, friday<br>e.g., → everyday                                           |
 
-
+<br>
+<br>
 
 ## Español
