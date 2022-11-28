@@ -17,7 +17,7 @@ CReminders is a C++ and Python written program that runs in the background and l
 <br>
 <br>
 
-The way CReminders works is by adding itself, the [main](https://github.com/GioByte10/CReminders/blob/main/main.cpp) program, to the Current User's start up through the Windows Registry. The program accesses the [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the users adds all necessary information for CReminders to create the notifications, this includes:
+The way CReminders works is by adding itself, the [main.cpp](https://github.com/GioByte10/CReminders/blob/main/main.cpp) program, to the Current User's start up through the Windows Registry. The program accesses the [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the users adds all necessary information for CReminders to create the notifications, this includes:
 
 | Parameter   | Description                                                                                                                                  |
 |-------------|-------------                                                                                                                                 |
@@ -32,6 +32,12 @@ The way CReminders works is by adding itself, the [main](https://github.com/GioB
 | Time        | 24 hour format<br>e.g., → 16:30                                                                                                              |
 | Days        | Days in which the reminder will be active<br>e.g., → monday, wednesday, friday<br>e.g., → everyday                                           |
 
+CReminders then waits for the specified day(s) and time and then creates the notification by calling [toastNotification.py](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/ToastNotification/toastNotification.py) using:
+<br>
+```C++
+ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, 0);
+```
+CReminders passes the content of the notification as an argument which is received by toastNotification. After some parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
 <br>
 <br>
 
