@@ -10,14 +10,14 @@
 </div>
 
 
-## English
+# English
 <img align="right" width="216" height="103" src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img4.png">
-CReminders is a C++ and Python written program that runs in the background and lets you create custom reminders using Windows ToastNotifications (pop-ups). In addition to a custom title, message, days, and time for the notification, you can add an icon and buttons with links as well.
+CReminders is a C++ and Python written program that runs in the background and lets you create custom reminders using Windows ToastNotifications (pop-ups). In addition to a custom title, message, days, and time, you can add an icon and buttons for the notification.
 
 <br>
 <br>
 
-The way CReminders works is by adding itself, the [main.cpp](https://github.com/GioByte10/CReminders/blob/main/main.cpp) program, to the Current User's start up through the Windows Registry. The program accesses the [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the users adds all necessary information for CReminders to create the notifications, this includes:
+The way CReminders works is by adding itself ([main.cpp](https://github.com/GioByte10/CReminders/blob/main/main.cpp)) to the Current User's start up through the Windows Registry. The program accesses the [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the user adds all necessary information for CReminders to create the notifications, this includes:
 
 | Parameter   | Description                                                                                                                                  |
 |-------------|-------------                                                                                                                                 |
@@ -37,14 +37,15 @@ CReminders then waits for the specified day(s) and time and then creates the not
 ```C++
 ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, 0);
 ```
-CReminders passes the content of the notification as an argument which is received by toastNotification. After some off-camera parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
-<br>
-<br>
+CReminders passes the content of the notification as an argument, which is received by toastNotification. After some off-camera parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
 <br>
 
-### Info file
-<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"/>
+## Info file
+<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img><br><br>
 Attached is an example of an info.txt file. Notice the _ticketing_ enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown in the example.
 
+<br>
+<br>
+<br>
 
-## Español
+# Español
