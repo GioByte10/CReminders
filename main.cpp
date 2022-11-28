@@ -303,7 +303,10 @@ void getInformation(const std::string &infoPath, std::list<std::string> *notific
         exit(1);
     }
 
-    for(i = 0; getline(info, line); i++);
+    for(i = 0; getline(info, line);){
+        if(line.length() > 0)
+            i++;
+    }
 
     info.clear();
     info.seekg(0);
