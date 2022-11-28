@@ -3,9 +3,9 @@
 ![img1](cmake-build-debug/resources/img2.png?raw=true "hello")
 <div align="center">
   <a href="https://www.google.com">How to install CReminders</a> | 
-  <a href="https://www.google.com">Feedback</a> |
+  <a href="https://forms.gle/6A2fwbND7u2C9yGb8">Feedback</a> |
   <a href="https://www.google.com">Como instalar CReminders</a> | 
-  <a href="https://www.google.com">Retroalimentacion</a> |
+  <a href="https://forms.gle/R6eP34ekC58Pk5UT9">Retroalimentacion</a> |
   <a href="https://github.com/GioByte10/CReminders#español"> Español</a>
 </div>
 
