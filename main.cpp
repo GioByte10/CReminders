@@ -4,23 +4,21 @@
 #include <fstream>
 #include <thread>
 
-HANDLE stopEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
+
+HANDLE stopEvent = CreateEvent(nullptr, TRUE, FALSE, nullptr);
 
 BOOL HandlerRoutine(DWORD fdwCtrlType){
-    switch( fdwCtrlType ){
-        case CTRL_LOGOFF_EVENT:
-            SetEvent(stopEvent);
-            //Beep(700,1000);
-            return TRUE;
 
-        case CTRL_SHUTDOWN_EVENT:
-            SetEvent(stopEvent);
-            //Beep(700,1000);
-            return TRUE;
-
-        default:
-            return FALSE;
+    if(fdwCtrlType == CTRL_LOGOFF_EVENT || fdwCtrlType == CTRL_SHUTDOWN_EVENT){
+        SetEvent(stopEvent);
+        Beep(700,1000);
+        return TRUE;
     }
+
+    else
+        return FALSE;
 }
 
 bool checkAlreadyExists(LPCSTR value){
@@ -193,7 +191,7 @@ void clearLists(std::list <std::string> *notificationContent_list, std::list <st
 
 std::string getDays(std::string daysLine){
 
-    std::string daysL = "";
+    std::string daysL;
     transform(daysLine.begin(), daysLine.end(), daysLine.begin(), ::tolower);
 
     if(daysLine.find("everyday") != std::string::npos || daysLine.find("diario") != std::string::npos)
@@ -244,7 +242,7 @@ std::string getDuration(std::string durationLine){
 std::string getLineInformation(const std::string &line){
 
     std::string newLine;
-    int i = line.find(':');
+    int i = (int) line.find(':');
 
     if(i == std::string::npos){
         MessageBox(nullptr, "info.txt is incorrectly formatted", "CReminders Error 0x02", MB_ICONERROR);
@@ -267,7 +265,7 @@ std::string getLineInformation(const std::string &line){
 
 void getTimeInformation(const std::string &timeString, std::list <int> *hour_list, std::list <int> *minute_list){
 
-    const int i = timeString.find(':');
+    const int i = (int) timeString.find(':');
 
     if(i == std::string::npos){
         MessageBox(nullptr, "info.txt is incorrectly formatted", "CReminders Error 0x03", MB_ICONERROR);
@@ -522,3 +520,4 @@ int main(int argc, char *argv[]){
 
     return 0;
 }
+#pragma clang diagnostic pop
