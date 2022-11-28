@@ -1,6 +1,6 @@
 # CReminders
 
-![img1](cmake-build-debug/resources/img2.png?raw=true "hello")
+![img1](cmake-build-debug/resources/img2.png?raw=true)
 <div align="center">
   <a href="https://www.google.com">How to install CReminders</a> | 
   <a href="https://forms.gle/6A2fwbND7u2C9yGb8">Feedback</a> |
@@ -37,8 +37,14 @@ CReminders then waits for the specified day(s) and time and then creates the not
 ```C++
 ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, 0);
 ```
-CReminders passes the content of the notification as an argument which is received by toastNotification. After some parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
+CReminders passes the content of the notification as an argument which is received by toastNotification. After some off-camera parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
 <br>
 <br>
+<br>
+
+### Info file
+<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"/>
+Attached is an example of an info.txt file. Notice the _ticketing_ enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown in the example.
+
 
 ## Español
