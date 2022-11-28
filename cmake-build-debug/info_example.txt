@@ -1,0 +1,23 @@
+-----------------------------------------------------------------------------------------------------------
+Active:         	yes
+Title:          	Example 1
+Message:        	Just testing
+Icon:           	C:\Users\user1\pictures\img1.png
+Duration:       	short
+Button:         	no
+ButtonText:
+ButtonLaunch:
+Time:           	14:30
+Days:           	everyday
+-----------------------------------------------------------------------------------------------------------
+Active:         	yes
+Title:          	Example 2
+Message:        	Just testing again
+Icon:           	C:\Users\user2\pictures\img2.png
+Duration:       	long
+Button:         	yes
+ButtonText:		Google
+ButtonLaunch:	https://www.google.com
+Time:           	20:00
+Days:           	monday, tuesday, saturday
+-----------------------------------------------------------------------------------------------------------

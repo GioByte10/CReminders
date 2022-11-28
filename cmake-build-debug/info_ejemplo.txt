@@ -1,0 +1,23 @@
+-----------------------------------------------------------------------------------------------------------
+Activo:         	si
+Titulo:          	Ejemplo 1
+Mensaje:        	Probando
+Icono:           	C:\Users\usuario1\imagenes\img1.png
+Duracion:       	corta
+Boton:         	no
+BotonTexto:
+ButtonEjecutar:
+Hora:           	14:30
+Dias:           	diario
+-----------------------------------------------------------------------------------------------------------
+Activo:         	si
+Titulo:          	Ejemplo 2
+Mensaje:        	Probando de nuevo
+Icono:           	C:\Users\usuario2\imagenes\img2.png
+Duracion:       	larga
+Boton:         	si
+BotonTexto:		Google
+ButtonEjecutar:	https://www.google.com
+Hora:           	20:00
+Dias:           	lunes, martes, sabado
+-----------------------------------------------------------------------------------------------------------
