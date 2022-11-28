@@ -12,7 +12,7 @@ CReminders is a C++ written program that runs in the background and lets you cre
 <br>
 <br>
 
-The way CReminders works is by adding itself, the [main](https://github.com/GioByte10/CReminders/blob/main/main.cpp) program, to the Current User's start up through the Windows Registry.
+The way CReminders works is by adding itself, the [main](https://github.com/GioByte10/CReminders/blob/main/main.cpp) program, to the Current User's start up through the Windows Registry. The program accesses the info.txt file where the users adds all necessary information for CReminders to create the notifications, this includes:
 
 
 
