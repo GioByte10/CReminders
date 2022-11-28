@@ -1,6 +1,6 @@
 # CReminders
 
-![img1](cmake-build-debug/resources/img1.png?raw=true "hello")
+![img1](cmake-build-debug/resources/img2.png?raw=true "hello")
 
 ***Español*** [***abajo***](#español)
 
