@@ -14,16 +14,18 @@ CReminders is a C++ written program that runs in the background and lets you cre
 
 The way CReminders works is by adding itself, the [main](https://github.com/GioByte10/CReminders/blob/main/main.cpp) program, to the Current User's start up through the Windows Registry. The program accesses the [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the users adds all necessary information for CReminders to create the notifications, this includes:
 
-| Parameter  | Description                                                                                                                                  |
-|------------|-------------                                                                                                                                 |
-| Active     | Whether or not this reminder is active                                                                                                       |
-| Title      | Reminder's title                                                                                                                             |
-| Message    | Reminder's message                                                                                                                           |
-| Icon       | Absolute path of the image<br>e.g., -> C:\Users\User1\pictures\img1.png                                                                      |
-| Duration   | Time the notification will pop-up before being added to the Action Center<br> short = 5s, long = 30s                                         |
-| Button     | Whether or not this reminder will have a button                                                                                              |
-| ButtonText | The text shown over the button                                                                                                               |
-| ButtonLaunh| The link (if any) the button will launch when clicked. Must contain "**https://**" &emsp;&emsp;&emsp;<br>e.g -> https://www.google.com       |
+| Parameter   | Description                                                                                                                                  |
+|-------------|-------------                                                                                                                                 |
+| Active      | Whether or not this reminder is active                                                                                                       |
+| Title       | Reminder's title                                                                                                                             |
+| Message     | Reminder's message                                                                                                                           |
+| Icon        | Absolute path of the image<br>e.g., → C:\Users\User1\pictures\img1.png                                                                       |
+| Duration    | Time the notification will pop-up before being added to the Action Center<br>short = 5s, long = 30s                                          |
+| Button      | Whether or not this reminder will have a button                                                                                              |
+| ButtonText  | The text shown over the button                                                                                                               |
+| ButtonLaunch| The link (if any) the button will launch when clicked. Must contain "**https://**" &emsp;&emsp;&emsp;<br>e.g., → https://www.google.com      |
+| Time        | 24 hour format<br>e.g., → 16:30                                                                                                              |
+| Days        | Days in which the reminder will be active<br>e.g., → monday, wednesday, friday<br>e.g., → everyday                                           |
 
 
 
