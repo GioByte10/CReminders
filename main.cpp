@@ -61,8 +61,7 @@ void deactivate(LPCSTR value) {
     }
 
     system("taskkill /f /im CReminders.exe");
-    MessageBox(nullptr, "CReminders has successfully been deactivated\nSe ha desactivado CReminders exitosamente",
-               "CReminders", MB_ICONINFORMATION);
+
 }
 
 std::string intDayToStringDayEn(int intDay){
@@ -462,23 +461,22 @@ int main(int argc, char *argv[]){
     infoPath = directoryPath + "\\\\info.txt";
     notificationPath = directoryPath + R"(\ToastNotification\dist\toastNotification.exe)";
 
-    getInformation(infoPath, &notificationContent_list, &days_list, &hour_list, &minute_list, false);
-
-
-    for(const auto& l: notificationContent_list)
-        std::cout << l.c_str() << std::endl;
-    /*
-    for(const auto& l: hour_list)
-        std::cout << l << std::endl;
-
-    for(const auto& l: minute_list)
-        std::cout << l << std::endl;
-
-    for(const auto& l: days_list)
-        std::cout << l << std::endl;
-    */
-
     if(argc == 1) {
+        getInformation(infoPath, &notificationContent_list, &days_list, &hour_list, &minute_list, false);
+
+        for(const auto& l: notificationContent_list)
+            std::cout << l.c_str() << std::endl;
+        /*
+        for(const auto& l: hour_list)
+            std::cout << l << std::endl;
+    
+        for(const auto& l: minute_list)
+            std::cout << l << std::endl;
+
+        for(const auto& l: days_list)
+            std::cout << l << std::endl;
+        */
+
         SetConsoleCtrlHandler((PHANDLER_ROUTINE)HandlerRoutine, TRUE );
         std::thread threadLastWritten(notifyLastWritten, directoryPath.c_str(), infoPath, &notificationContent_list, &days_list, &hour_list, &minute_list);
 
