@@ -415,6 +415,8 @@ void reset_txt(const std::string &infoPath, std::list <std::string> *notificatio
         newFile << "Time:           " << std::endl;
         newFile << "Days:           " << std::endl;
         newFile << "-----------------------------------------------------------------------------------------------------------" << std::endl;
+        newFile.close();
+        MessageBox(nullptr, "info.txt has been reset", "CReminders", MB_ICONINFORMATION);
     }
 
     else{
@@ -430,8 +432,9 @@ void reset_txt(const std::string &infoPath, std::list <std::string> *notificatio
         newFile << "Hora:           " << std::endl;
         newFile << "Dias:           " << std::endl;
         newFile << "-----------------------------------------------------------------------------------------------------------" << std::endl;
+        newFile.close();
+        MessageBox(nullptr, "info.txt se ha reseteado", "CReminders", MB_ICONINFORMATION);
     }
-    newFile.close();
 }
 
 int main(int argc, char *argv[]){
@@ -469,7 +472,7 @@ int main(int argc, char *argv[]){
         /*
         for(const auto& l: hour_list)
             std::cout << l << std::endl;
-    
+
         for(const auto& l: minute_list)
             std::cout << l << std::endl;
 
