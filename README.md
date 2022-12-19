@@ -25,7 +25,7 @@ ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_s
 
 CReminders passes the content of the notification as an argument, which is received by toastNotification. After some off-camera parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
 <br>
-
+<br>
 ## Info file
 This file holds all the data necessary for the program to run, this includes:
 | Parameter   | Description                                                                                                                                  |
@@ -42,15 +42,18 @@ This file holds all the data necessary for the program to run, this includes:
 | Days        | Days in which the reminder will be active<br>e.g., → monday, wednesday, friday<br>e.g., → everyday                                           |
 
 <br>
-<br>
-Attached is an example of an info.txt file. Notice the _ticketing_ enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown here.
-<br>
-<br>
-<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img><br><br>
-<br>
-## Commands file
-This executable allows the user to perform several useful 
 
+Attached below is an example of an info.txt file. Notice the _ticketing_ enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown here.
+
+<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img><br><br>
+
+## Commands file
+This executable allows the user to perform several useful features, these are as follows:<br>
+|Command     |Description|
+|------------|-----------|
+|`show`      |Quickly gives a preview of all reminders|
+|`deactivate`|Removes the program from the Registry and stops its execution. To reactivate it you must run CReminders.exe again|
+|`reset en`  |Resets the info.txt file to its original state, in english. Note that this will delete all the reminders that you created|
 <br>
 <br>
 <br>
