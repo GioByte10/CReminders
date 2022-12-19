@@ -71,10 +71,8 @@ ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_s
 ```
 
 CReminders pasa el contenido de la notificacion como argumento, el cual es recibido por toastNotification. Tras eso la notificacion se muestra usando el modulo [Winotify](https://github.com/versa-syahptr/winotify) de Versa Syahputra.
-
 <br>
 <br>
-
 ## Archivo info.txt
 Este archivo contiene toda la informacion necesaria para que el programa se ejecute, esta incluye:
 | Parametro   | Descripcion                                                                                                                                  |
@@ -86,7 +84,7 @@ Este archivo contiene toda la informacion necesaria para que el programa se ejec
 | Duracion    | Tiempo que la notificacion durara como pop-up antes de ser movido al Centro de Actividades<br>corta = 5s, larga = 30s                        |
 | Boton       | Si esta notificacion tendra un boton o no                                                                                                    |
 | BotonTexto  | El texto que se mostrara en el boton                                                                                                         |
-| BotonLaunch | El link (si es que hay) que el boton abrira al ser presionado. Debe contener "**https://**" &emsp;&emsp;&emsp;<br>e.g., → https://www.google.com|
+| BotonLaunch | El link (si es que hay) que el boton abrira al ser presionado. Debe contener "**https://**" &emsp;&emsp;&emsp;<br>e.g., → https://www.google.com                                                                                                                                       |
 | Hora        | En formato de 24 horas<br>e.g., → 16:30                                                                                                      |
 | Dias        | Dias en los cuales la notificacion estara activa<br>e.g., → lunes, miercoles, viernes<br>e.g., → diario                                      |
 
@@ -102,5 +100,4 @@ Este ejecutable le permite al usuario realizar varias funciones, estas son las s
 |------------|-----------                                                                                                                                   |
 |`mostrar`   |Muestra rapidamente como se verian los recordatorios                                                                                          |
 |`desactivar`|Elimina el programa del registro y detiene su ejecucion. Para volver a activarlo se debe ejecutar CReminders.exe de nuevo                     |
-|`reset es`  |Resetea el archivo info.txt a su [estado inicial](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original_.txt), en espanol. Note que esto borrara todos los recordatorios que haya creado                    |
-<br>
+|`reset es`  |Resetea el archivo info.txt a su [estado inicial](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original_.txt), en espanol. Note que esto borrara todos los recordatorios que haya creado                                              |
