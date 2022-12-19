@@ -43,7 +43,7 @@ This file holds all the data necessary for the program to run, this includes:
 
 <br>
 
-Attached below is an example of an info.txt file. Notice the _ticketing_ enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown here.
+Attached below is an example of an info.txt file. Notice the _ticketing_ (-----) enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown here.
 
 <img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img><br><br>
 
@@ -77,30 +77,30 @@ CReminders pasa el contenido de la notificacion como argumento, el cual es recib
 
 ## Archivo info.txt
 Este archivo contiene toda la informacion necesaria para que el programa se ejecute, esta incluye:
-| Parameter   | Description                                                                                                                                  |
+| Parametro   | Descripcion                                                                                                                                  |
 |-------------|-------------                                                                                                                                 |
-| Activo      | Si este recordatorio esta activo o no                                                                                                        |
-| Titulo      | Titulo del recordatorio                                                                                                                      |
-| Mensaje     | Mensaje del recordatorio                                                                                                                     |
+| Activo      | Si esta notificacion estara activa o no                                                                                                      |
+| Titulo      | Titulo de la notificacion                                                                                                                    |
+| Mensaje     | Mensaje de la notificacion                                                                                                                   |
 | Icono       | Ruta absoluta de la image <br>e.g., → C:\Users\User1\pictures\img1.png                                                                       |
 | Duracion    | Tiempo que la notificacion durara como pop-up antes de ser movido al Centro de Actividades<br>corta = 5s, larga = 30s                        |
-| Boton       | Si este recordatorio tendra un boton o no                                                                                                    |
+| Boton       | Si esta notificacion tendra un boton o no                                                                                                    |
 | BotonTexto  | El texto que se mostrara en el boton                                                                                                         |
-| BotonLaunch | The link (if any) the button will launch when clicked. Must contain "**https://**" &emsp;&emsp;&emsp;<br>e.g., → https://www.google.com      |
-| Hora        | 24 hour format<br>e.g., → 16:30                                                                                                              |
-| Dias        | Days in which the reminder will be active<br>e.g., → monday, wednesday, friday<br>e.g., → everyday                                           |
+| BotonLaunch | El link (si es que hay) que el boton abrira al ser presionado. Debe contener "**https://**" &emsp;&emsp;&emsp;<br>e.g., → https://www.google.com|
+| Hora        | En formato de 24 horas<br>e.g., → 16:30                                                                                                      |
+| Dias        | Dias en los cuales la notificacion estara activa<br>e.g., → lunes, miercoles, viernes<br>e.g., → diario                                      |
 
 <br>
 
-Attached below is an example of an info.txt file. Notice the _ticketing_ enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown here.
+Abajo esta adjunto un ejemplo de un archivo info.txt. Note como cada _bloque_ de notificacion esta _encapsulado_ por barras horizontales (------). Es de suma importancia que cada bloque este correctamente encapsulado en los limites superiores e inferiores. Estos limites deben ser compartidos cuando hay bloques adyacentes, tal como se muestra abajo.
 
-<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img><br><br>
+<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img6.png" alt="drawing" width="800"></img><br><br>
 
-## Commands file
-This executable allows the user to perform several useful features, these are as follows:<br>
-|Command     |Description                                                                                                                                   |
+## Archivo commands.exe
+Este ejecutable le permite al usuario realizar varias funciones, estas son las siguientes:<br>
+|Comando     |Descripcion                                                                                                                                   |
 |------------|-----------                                                                                                                                   |
-|`show`      |Quickly gives a preview of all reminders                                                                                                      |
-|`deactivate`|Removes the program from the Registry and stops its execution. To reactivate it you must run CReminders.exe again                             |
-|`reset en`  |Resets the info.txt file to its [original state](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original.txt), in english. Note that this will delete all the reminders that you created                                               |
+|`mostrar`   |Muestra rapidamente como se verian los recordatorios                                                                                          |
+|`desactivar`|Elimina el programa del registro y detiene su ejecucion. Para volver a activarlo se debe ejecutar CReminders.exe de nuevo                     |
+|`reset es`  |Resetea el archivo info.txt a su [estado inicial](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original_.txt), en espanol. Note que esto borrara todos los recordatorios que haya creado                    |
 <br>
