@@ -15,7 +15,7 @@ Titulo:          	Ejemplo 2
 Mensaje:        	Probando de nuevo
 Icono:           	C:\Users\usuario2\imagenes\img2.png
 Duracion:       	larga
-Boton:         	si
+Boton:		si
 BotonTexto:		Google
 ButtonEjecutar:	https://www.google.com
 Hora:           	20:00
