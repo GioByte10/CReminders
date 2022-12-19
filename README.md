@@ -49,13 +49,11 @@ Attached below is an example of an info.txt file. Notice the _ticketing_ enclosi
 
 ## Commands file
 This executable allows the user to perform several useful features, these are as follows:<br>
-|Command     |Description|
-|------------|-----------|
-|`show`      |Quickly gives a preview of all reminders|
-|`deactivate`|Removes the program from the Registry and stops its execution. To reactivate it you must run CReminders.exe again|
-|`reset en`  |Resets the info.txt file to its original state, in english. Note that this will delete all the reminders that you created|
-<br>
-<br>
+|Command     |Description                                                                                                                                   |
+|------------|-----------                                                                                                                                   |
+|`show`      |Quickly gives a preview of all reminders                                                                                                      |
+|`deactivate`|Removes the program from the Registry and stops its execution. To reactivate it you must run CReminders.exe again                             |
+|`reset en`  |Resets the info.txt file to its [original state](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original.txt), in english. Note that this will delete all the reminders that you created                                               |
 <br>
 
 # Español
