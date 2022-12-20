@@ -8,3 +8,4 @@ set_target_properties(CReminders PROPERTIES LINK_FLAGS "-static -mwindows")
 
 add_executable(commands commands.cpp)
 add_executable(test test.cpp)
+set_target_properties(test PROPERTIES LINK_FLAGS "-static")

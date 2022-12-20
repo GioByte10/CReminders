@@ -132,6 +132,7 @@ build CMakeFiles/test.dir/test.cpp.obj: CXX_COMPILER__test_Debug C$:/Users/super
 
 build test.exe: CXX_EXECUTABLE_LINKER__test_Debug CMakeFiles/test.dir/test.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\test.dir
   POST_BUILD = cd .

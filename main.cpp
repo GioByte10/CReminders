@@ -9,16 +9,23 @@
 
 HANDLE stopEvent = CreateEvent(nullptr, TRUE, FALSE, nullptr);
 
-BOOL HandlerRoutine(DWORD fdwCtrlType){
+BOOL HandlerRoutine(DWORD fdwCtrlType)
+{
+    switch( fdwCtrlType )
+    {
+        case CTRL_LOGOFF_EVENT:
+            SetEvent(stopEvent);
+            Beep(1000, 1000);
+            return TRUE;
 
-    if(fdwCtrlType == CTRL_LOGOFF_EVENT || fdwCtrlType == CTRL_SHUTDOWN_EVENT){
-        SetEvent(stopEvent);
-        Beep(700,1000);
-        return TRUE;
+        case CTRL_SHUTDOWN_EVENT:
+            SetEvent(stopEvent);
+            Beep(1000, 1000);
+            return TRUE;
+
+        default:
+            return FALSE;
     }
-
-    else
-        return FALSE;
 }
 
 bool checkAlreadyExists(LPCSTR value){
@@ -467,9 +474,10 @@ int main(int argc, char *argv[]){
     if(argc == 1) {
         getInformation(infoPath, &notificationContent_list, &days_list, &hour_list, &minute_list, false);
 
+        /*
         for(const auto& l: notificationContent_list)
             std::cout << l.c_str() << std::endl;
-        /*
+
         for(const auto& l: hour_list)
             std::cout << l << std::endl;
 
@@ -482,6 +490,7 @@ int main(int argc, char *argv[]){
 
         SetConsoleCtrlHandler((PHANDLER_ROUTINE)HandlerRoutine, TRUE );
         std::thread threadLastWritten(notifyLastWritten, directoryPath.c_str(), infoPath, &notificationContent_list, &days_list, &hour_list, &minute_list);
+        threadLastWritten.detach();
 
         while (true) {
 
