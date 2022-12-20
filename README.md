@@ -102,3 +102,10 @@ Este ejecutable le permite al usuario realizar varias funciones, estas son las s
 |`mostrar`   | Muestra rápidamente como se verían los recordatorios                                                                                         |
 |`desactivar`| Elimina el programa del registro y detiene su ejecución. Para volver a activarlo se debe ejecutar CReminders.exe de nuevo                    |
 |`reset es`  | Resetea el archivo info.txt a su [estado inicial](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original_.txt), en español. Note que esto borrara todos los recordatorios que haya creado                                              |
+
+
+## Gallery
+![img1](cmake-build-debug/resources/img7.png?raw=true)
+![img1](cmake-build-debug/resources/img8.png?raw=true)
+![img1](cmake-build-debug/resources/img9.png?raw=true)
+![img1](cmake-build-debug/resources/img10.png?raw=true)
