@@ -2,10 +2,11 @@
 
 ![img1](cmake-build-debug/resources/img2.png?raw=true)
 <div align="center">
-  <a href="https://www.google.com">How to install CReminders</a> | 
+  <a href="https://github.com/GioByte10/CReminders#Gallery">Gallery</a> | 
+  <a href="https://www.google.com">How to install</a> | 
   <a href="https://forms.gle/6A2fwbND7u2C9yGb8">Feedback</a> | 
   <a href="https://github.com/GioByte10/CReminders#español">Español</a> | 
-  <a href="https://www.google.com">Como instalar CReminders</a> | 
+  <a href="https://www.google.com">Como instalar</a> | 
   <a href="https://forms.gle/R6eP34ekC58Pk5UT9">Retroalimentacion</a> | 
   <a href="mailto:gvanni.bernal10@gmail.com">Contact</a>
 </div>
@@ -46,8 +47,9 @@ This file holds all the data necessary for the program to run, this includes:
 
 Attached below is an example of an info.txt file. Notice the _ticketing_ (-----) enclosing for each notification _block_. It is crucial that every block is properly enclosed in its upper and lower boundaries. Blocks must share enclosings when adjacent to each other, as shown here.
 
-<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img><br><br>
-
+<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img5.png" alt="drawing" width="800"></img>
+<br>
+<br>
 ## commands.exe file
 This executable allows the user to perform several useful features, these are as follows:<br>
 |Command     |Description                                                                                                                                   |
@@ -93,8 +95,9 @@ Este archivo contiene toda la información necesaria para que el programa se eje
 
 Abajo esta adjunto un ejemplo de un archivo info.txt. Note como cada _bloque_ de notificación esta _encapsulado_ por barras horizontales (------). Es de suma importancia que cada bloque este correctamente encapsulado en los límites superiores e inferiores. Estos límites deben ser compartidos cuando hay bloques adyacentes, tal como se muestra abajo.
 
-<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img6.png" alt="drawing" width="800"></img><br><br>
-
+<img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img6.png" alt="drawing" width="800"></img>
+<br>
+<br>
 ## Archivo commands.exe
 Este ejecutable le permite al usuario realizar varias funciones, estas son las siguientes:<br>
 |Comando     | Descripción                                                                                                                                  |
@@ -102,3 +105,13 @@ Este ejecutable le permite al usuario realizar varias funciones, estas son las s
 |`mostrar`   | Muestra rápidamente como se verían los recordatorios                                                                                         |
 |`desactivar`| Elimina el programa del registro y detiene su ejecución. Para volver a activarlo se debe ejecutar CReminders.exe de nuevo                    |
 |`reset es`  | Resetea el archivo info.txt a su [estado inicial](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original_.txt), en español. Note que esto borrara todos los recordatorios que haya creado                                              |
+
+<br>
+<br>
+
+# Gallery / Galería
+### Windows 11
+![img1](cmake-build-debug/resources/img7.png?raw=true)
+![img1](cmake-build-debug/resources/img8.png?raw=true)
+![img1](cmake-build-debug/resources/img9.png?raw=true)
+![img1](cmake-build-debug/resources/img10.png?raw=true)
