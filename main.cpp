@@ -286,7 +286,6 @@ void getTimeInformation(const std::string &timeString, std::list <int> *hour_lis
         MessageBox(nullptr, "info.txt is incorrectly formatted", "CReminders Error 0x04", MB_ICONERROR);
         exit(1);
     }
-
 }
 
 void getInformation(const std::string &infoPath, std::list<std::string> *notificationContent_list, std::list<std::string> *days_list, std::list <int> *hour_list, std::list <int> *minute_list, bool demo){
@@ -361,7 +360,6 @@ void getInformation(const std::string &infoPath, std::list<std::string> *notific
             if(getDays(lines[9 + j * linesPerBlock]).length())
                 days_list->emplace_back(getDays(lines[9 + j * linesPerBlock]));
             else {
-                std::cout << getDays(lines[9 + j * linesPerBlock]) << std::endl;
                 MessageBox(nullptr, "info.txt is incorrectly formatted", "CReminders Error 0x07", MB_ICONERROR);
                 exit(1);
             }
