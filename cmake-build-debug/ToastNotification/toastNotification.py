@@ -46,5 +46,5 @@ if len(sys.argv) == 7:
     createNotification(argv1, argv2, argv3, argv4, argv5, argv6)
 
 else:
-    createNotification("Error", str(len(sys.argv)) + " argument(s) were passed", os.getcwd() + "\\ErrorIcon.png", "long", "Report", "https://github.com/GioByte10/CReminders/wiki")
+    createNotification("Error", f"{str(len(sys.argv))} argument(s) were passed", os.getcwd() + "\\ErrorIcon.png", "long", "Help", "https://github.com/GioByte10/CReminders/wiki")
 
