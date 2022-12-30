@@ -105,6 +105,7 @@ void errorExit(const TCHAR filePath[], const std::string &messageBoxPath, std::s
 
     myMessageBox(messageBoxPath, errorTitle, errorText);
     SetEvent(stopEvent);
+    Sleep(2000);
     ShellExecuteA(nullptr, "open", filePath, "error", nullptr, SW_SHOW);
     exit(1);
 }
@@ -295,10 +296,13 @@ void getTimeInformation(const TCHAR filePath[], const std::string messageBoxPath
 
     const int i = (int) timeString.find(':');
 
+    std::cout << timeString << std::endl;
+
     if(i == std::string::npos)
         errorExit(filePath, messageBoxPath, "CReminders Error 0x03", std::to_string((3 - 2) + 6 * lang));
 
     try {
+        std::cout << timeString.substr(i + 1, timeString.length()) << std::endl;
         hour_list.emplace_back(stoi(timeString.substr(0, i)));
         minute_list.emplace_back(stoi(timeString.substr(i + 1, timeString.length())));
 
@@ -350,8 +354,10 @@ void getInformation(const TCHAR filePath[], const std::string &infoPath, const s
 
     i--;
 
-    if(i % (linesPerBlock + 1) != 0)
+    if(i % (linesPerBlock + 1) != 0) {
+        info.close();
         errorExit(filePath, messageBoxPath, "CReminders Error 0x06", std::to_string((6 - 2) + 6 * lang));
+    }
 
     nBlocks = i/(linesPerBlock + 1);
     std::string lines[nBlocks * linesPerBlock];
@@ -394,9 +400,10 @@ void getInformation(const TCHAR filePath[], const std::string &infoPath, const s
                 errorExit(filePath, messageBoxPath, "CReminders Error 0x07", std::to_string((7 - 2) + 6 * lang));
         }
     }
+
 }
 
-void notifyLastWritten(const LPCSTR directoryPath, const TCHAR filePath[], const std::string messageBoxPath, const std::string &infoPath, std::list<std::string> &notificationContent_list, std::list<std::string> &days_list, std::list <int> &hour_list, std::list <int> &minute_list){
+void notifyLastWritten(const LPCSTR directoryPath, const TCHAR filePath[], const std::string &infoPath, const std::string &messageBoxPath, std::list<std::string> &notificationContent_list, std::list<std::string> &days_list, std::list <int> &hour_list, std::list <int> &minute_list){
 
     HANDLE handles[2];
 
@@ -406,10 +413,11 @@ void notifyLastWritten(const LPCSTR directoryPath, const TCHAR filePath[], const
         handles[1] = stopEvent;
 
         DWORD wait = WaitForMultipleObjects(2, handles, FALSE, INFINITE);
-        if (wait == WAIT_OBJECT_0)
+        if (wait == WAIT_OBJECT_0){
+            Sleep(2000);
             getInformation(filePath, infoPath, messageBoxPath, notificationContent_list, days_list, hour_list, minute_list, false);
+        }
     }
-    Beep(700, 1000);
 }
 
 void showReminders(const std::string &notificationPath, const std::list <std::string> &notificationContent_list){
@@ -501,18 +509,19 @@ int main(int argc, char *argv[]){
     directoryPath = getDirectoryPath(filePath, 1);
     infoPath = directoryPath + R"(\info.txt)";
     notificationPath = directoryPath + R"(\ToastNotification\dist\toastNotification.exe)";
-    messageBoxPath = directoryPath + R"(\MessageBox\dist\messageBox.exe)";
+    messageBoxPath = directoryPath + R"(\ToastNotification\dist\messageBox.exe)";
 
     if(argc > 1 && argv[1] == std::string("error")){
         HANDLE fileChange;
 
         fileChange = FindFirstChangeNotification(directoryPath.c_str(), FALSE, FILE_NOTIFY_CHANGE_LAST_WRITE);
         WaitForSingleObject(fileChange, INFINITE);
+        Sleep(2000);
     }
 
-    if(argc == 1) {
-        getInformation(filePath, infoPath, messageBoxPath, notificationContent_list, days_list, hour_list, minute_list, false);
+    if(argc == 1 || argv[1] == std::string("error")) {
 
+        getInformation(filePath, infoPath, messageBoxPath, notificationContent_list, days_list, hour_list, minute_list, false);
         SetConsoleCtrlHandler((PHANDLER_ROUTINE)HandlerRoutine, TRUE );
         std::thread threadLastWritten(notifyLastWritten, directoryPath.c_str(), filePath, infoPath, messageBoxPath, std::ref(notificationContent_list), std::ref(days_list), std::ref(hour_list), std::ref(minute_list));
         threadLastWritten.detach();
