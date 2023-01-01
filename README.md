@@ -7,7 +7,7 @@
   <a href="https://forms.gle/6A2fwbND7u2C9yGb8">Feedback</a> | 
   <a href="https://github.com/GioByte10/CReminders#español">Español</a> | 
   <a href="https://www.google.com">Como instalar</a> | 
-  <a href="https://forms.gle/R6eP34ekC58Pk5UT9">Retroalimentacion</a> | 
+  <a href="https://forms.gle/R6eP34ekC58Pk5UT9">Retroalimentación</a> | 
   <a href="mailto:gvanni.bernal10@gmail.com">Contact</a>
 </div>
 
@@ -19,10 +19,10 @@ CReminders is a C++ and Python written program that runs in the background and l
 <br>
 <br>
 
-The way CReminders works is by adding itself ([main.cpp](https://github.com/GioByte10/CReminders/blob/main/main.cpp)) to the `CURRENT_USER`'s start up through the [Windows Registry](https://en.wikipedia.org/wiki/Windows_Registry). The program accesses the [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the user adds all necessary information for it to run. CReminders then waits for the specified day(s) and time and then creates the notification by running [toastNotification.py](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/ToastNotification/toastNotification.py), using:
+The way CReminders works is by adding itself ([`main.cpp`](https://github.com/GioByte10/CReminders/blob/main/main.cpp)) to the `CURRENT_USER`'s start up through the [Windows Registry](https://en.wikipedia.org/wiki/Windows_Registry). The program accesses the [`info.txt`](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_example.txt) file where the user adds all necessary information for it to run. CReminders then waits for the specified day(s) and time and then creates the notification by running [`toastNotification.py`](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/ToastNotification/toastNotification.py), using:
 <br>
 ```C++
-ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, 0);
+ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, SW_HIDE);
 ```
 
 CReminders passes the content of the notification as an argument, which is received by toastNotification. After some off-camera parsing, the notification is displayed using Versa Syahputra's [Winotify](https://github.com/versa-syahptr/winotify) module.
@@ -67,10 +67,10 @@ CReminders es un programa escrito en C++ y Python, el cual corre en segundo plan
 <br>
 <br>
 
-Para lograr eso, CReminders se añade a sí mismo ([main.cpp](https://github.com/GioByte10/CReminders/blob/main/main.cpp)) al start up de `CURRENT_USER` a través del [Registro de Windows](https://es.wikipedia.org/wiki/Registro_de_Windows). El programa accesa el archivo [info.txt](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_ejemplo.txt), en el cual el usuario añade toda la información necesaria para que este se ejecute. Tras eso, CReminders espera por el día y tiempo especificado y crea la notificación ejecutando [toastNotification.py](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/ToastNotification/toastNotification.py), usando:
+Para lograr eso, CReminders se añade a sí mismo ([`main.cpp`](https://github.com/GioByte10/CReminders/blob/main/main.cpp)) al start up de `CURRENT_USER` a través del [Registro de Windows](https://es.wikipedia.org/wiki/Registro_de_Windows). El programa accesa el archivo [`info.txt`](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/info_ejemplo.txt), en el cual el usuario añade toda la información necesaria para que este se ejecute. Tras eso, CReminders espera por el día y tiempo especificado y crea la notificación ejecutando [`toastNotification.py`](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/ToastNotification/toastNotification.py), usando:
 <br>
 ```C++
-ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, 0);
+ShellExecuteA(nullptr, "open", notificationPath.c_str(), notificationContent.c_str(), nullptr, SW_HIDE);
 ```
 
 CReminders pasa el contenido de la notificación como argumento, el cual es recibido por toastNotification. Tras eso la notificación se muestra usando el módulo [Winotify](https://github.com/versa-syahptr/winotify) de Versa Syahputra.
@@ -84,16 +84,16 @@ Este archivo contiene toda la información necesaria para que el programa se eje
 | Titulo      | Título de la notificación                                                                                                                    |
 | Mensaje     | Mensaje de la notificación                                                                                                                   |
 | Icono       | Ruta absoluta de la imagen<br>e.g., → C:\Users\Usuario1\imagenes\img1.png                                                                    |
-| Duracion    | Tiempo que la notificación durará como pop-up antes de ser movido al Centro de Actividades<br>corta = 5s, larga = 30s                        |
+| Duracion    | Tiempo que la notificación durará como pop-up antes de ser movida al Centro de Actividades<br>corta = 5s, larga = 30s                        |
 | Boton       | Si esta notificación tendrá un botón o no                                                                                                    |
 | BotonTexto  | El texto que se mostrará en el botón                                                                                                         |
 | BotonLaunch | El link (si es que hay) que el botón abrirá al ser presionado. Debe contener "**https://**" &emsp;&emsp;&emsp;<br>e.g., → https://www.google.com                                                                                                                                       |
 | Hora        | En formato de 24 horas<br>e.g., → 16:30                                                                                                      |
-| Dias        | Días en los cuales la notificación estará activa<br>e.g., → lunes, miercoles, viernese.g., → diario                                          |
+| Dias        | Días en los cuales la notificación estará activa<br>e.g., → lunes, miercoles, viernes<br>e.g., → diario                                          |
 
 <br>
 
-Abajo esta adjunto un ejemplo de un archivo info.txt. Note como cada _bloque_ de notificación esta _encapsulado_ por barras horizontales (------). Es de suma importancia que cada bloque este correctamente encapsulado en los límites superiores e inferiores. Estos límites deben ser compartidos cuando hay bloques adyacentes, tal como se muestra abajo.
+Abajo esta adjunto un ejemplo de un archivo info.txt. Nota como cada _bloque_ de notificación esta _encapsulado_ por barras horizontales (------). Es de suma importancia que cada bloque este correctamente encapsulado en los límites superiores e inferiores. Estos límites deben ser compartidos cuando hay bloques adyacentes, tal como se muestra abajo.
 
 <img src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img6.png" alt="drawing" width="800"></img>
 <br>
@@ -103,7 +103,7 @@ Este ejecutable le permite al usuario realizar varias funciones, estas son las s
 |Comando     | Descripción                                                                                                                                  |
 |------------|-----------                                                                                                                                   |
 |`mostrar`   | Muestra rápidamente como se verían los recordatorios                                                                                         |
-|`desactivar`| Elimina el programa del registro y detiene su ejecución. Para volver a activarlo se debe ejecutar CReminders.exe de nuevo                    |
+|`desactivar`| Elimina el programa del Registro y detiene su ejecución. Para volver a activarlo se debe ejecutar CReminders.exe de nuevo                    |
 |`reset es`  | Resetea el archivo info.txt a su [estado inicial](https://github.com/GioByte10/CReminders/blob/main/cmake-build-debug/resources/info_original_.txt), en español. Note que esto borrara todos los recordatorios que haya creado                                              |
 
 <br>
