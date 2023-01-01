@@ -296,13 +296,10 @@ void getTimeInformation(const TCHAR filePath[], const std::string messageBoxPath
 
     const int i = (int) timeString.find(':');
 
-    std::cout << timeString << std::endl;
-
     if(i == std::string::npos)
         errorExit(filePath, messageBoxPath, "CReminders Error 0x03", std::to_string((3 - 2) + 6 * lang));
 
     try {
-        std::cout << timeString.substr(i + 1, timeString.length()) << std::endl;
         hour_list.emplace_back(stoi(timeString.substr(0, i)));
         minute_list.emplace_back(stoi(timeString.substr(i + 1, timeString.length())));
 
