@@ -3,14 +3,24 @@
 ![img1](cmake-build-debug/resources/img2.png?raw=true)
 <div align="center">
   <a href="https://github.com/GioByte10/CReminders#Gallery">Gallery</a> | 
-  <a href="https://www.google.com">How to install</a> | 
   <a href="https://forms.gle/6A2fwbND7u2C9yGb8">Feedback</a> | 
   <a href="https://github.com/GioByte10/CReminders#español">Español</a> | 
-  <a href="https://www.google.com">Como instalar</a> | 
   <a href="https://forms.gle/R6eP34ekC58Pk5UT9">Retroalimentación</a> | 
+  <a href="https://github.com/GioByte10/CReminders/wiki/Help"> Help/Ayuda </a> | 
   <a href="mailto:gvanni.bernal10@gmail.com">Contact</a>
 </div>
+<br>
 
+<div align="center">
+
+[![licenseBadge]][licenseLink]
+[![releaseBadge]][releaseLink]
+
+[licenseBadge]: https://img.shields.io/github/license/GioByte10/CReminders?style=flat
+[licenseLink]: https://github.com/GioByte10/CReminders/blob/main/LICENSE
+[releaseBadge]: https://img.shields.io/github/v/release/GioByte10/CReminders?display_name=tag&label=install
+[releaseLink]: https://github.com/GioByte10/CReminders/releases
+</div>
 
 # English
 <img align="right" width="216" height="103" src="https://raw.githubusercontent.com/GioByte10/CReminders/main/cmake-build-debug/resources/img4.png">
