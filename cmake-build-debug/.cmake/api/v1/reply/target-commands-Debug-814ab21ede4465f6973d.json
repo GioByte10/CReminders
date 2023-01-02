@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test.exe"
+			"path" : "commands.exe"
 		},
 		{
-			"path" : "test.pdb"
+			"path" : "commands.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "test::@6890427a1f51a3e7e1df",
+	"id" : "commands::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test",
-	"nameOnDisk" : "test.exe",
+	"name" : "commands",
+	"nameOnDisk" : "commands.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test.cpp",
+			"path" : "commands.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -99,6 +99,7 @@ build CMakeFiles/commands.dir/commands.cpp.obj: CXX_COMPILER__commands_Debug C$:
 
 build commands.exe: CXX_EXECUTABLE_LINKER__commands_Debug CMakeFiles/commands.dir/commands.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\commands.dir
   POST_BUILD = cd .
@@ -166,7 +167,7 @@ build CMakeFiles/messageBox.dir/messageBox.cpp.obj: CXX_COMPILER__messageBox_Deb
 
 build ToastNotification/dist/messageBox.exe: CXX_EXECUTABLE_LINKER__messageBox_Debug CMakeFiles/messageBox.dir/messageBox.cpp.obj
   FLAGS = -g
-  LINK_FLAGS = -mwindows
+  LINK_FLAGS = -static -mwindows
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\messageBox.dir
   POST_BUILD = cd .

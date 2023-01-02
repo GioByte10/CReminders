@@ -52,21 +52,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "commands::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-commands-Debug-466acc9fc3e261a9145c.json",
+					"jsonFile" : "target-commands-Debug-814ab21ede4465f6973d.json",
 					"name" : "commands",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "messageBox::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-messageBox-Debug-b5211898d78ba929cc53.json",
+					"jsonFile" : "target-messageBox-Debug-5108e8ba6ac6e4f6c74f.json",
 					"name" : "messageBox",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-Debug-587b5ffa6f55f9ad1f84.json",
+					"jsonFile" : "target-test-Debug-0a6598078e65577c8c69.json",
 					"name" : "test",
 					"projectIndex" : 0
 				}

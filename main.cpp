@@ -58,25 +58,7 @@ void addToRegistry(const LPCSTR value, const TCHAR filePath[]){
     }
 }
 
-void deactivate(const LPCSTR value) {
-
-    HKEY newKey;
-
-    RegOpenKey(HKEY_CURRENT_USER, R"(Software\Microsoft\Windows\CurrentVersion\Run)", &newKey);
-    LONG result = RegDeleteValue(newKey, value);
-    RegCloseKey(newKey);
-
-    if (result != ERROR_SUCCESS) {
-        SetEvent(stopEvent);
-        ShellExecuteA(nullptr, "open", "https://github.com/GioByte10/CReminders/wiki", nullptr, nullptr, SW_SHOWMAXIMIZED);
-        MessageBox(nullptr, "Could not delete from startup", "CReminders Error 0x01", MB_ICONERROR);
-        exit(1);
-    }
-
-    system("taskkill /f /im CReminders.exe");
-}
-
-std::string patchSpaces(const std::string &line, const std::string r){
+std::string patchSpaces(const std::string &line, const std::string &r){
 
     std::string newLine;
 
@@ -99,6 +81,30 @@ void myMessageBox(const std::string &messageBoxPath, std::string title, std::str
 
     ShellExecuteA(nullptr, "open", messageBoxPath.c_str(), content.c_str(), nullptr, SW_SHOW);
 
+}
+
+void deactivate(const LPCSTR value, const std::string &messageBoxPath) {
+
+    HKEY newKey;
+
+    RegOpenKey(HKEY_CURRENT_USER, R"(Software\Microsoft\Windows\CurrentVersion\Run)", &newKey);
+    LONG result = RegDeleteValue(newKey, value);
+    RegCloseKey(newKey);
+
+    if (result != ERROR_SUCCESS) {
+        SetEvent(stopEvent);
+        ShellExecuteA(nullptr, "open", "https://github.com/GioByte10/CReminders/wiki", nullptr, nullptr, SW_SHOWMAXIMIZED);
+        myMessageBox(messageBoxPath, "CReminders Error 0x01", "Could not remove from startup");
+        exit(1);
+    }
+
+    if(!lang)
+        myMessageBox(messageBoxPath, "CReminders", "CReminders has been successfully deactivated");
+    else
+        myMessageBox(messageBoxPath, "CReminders", "CReminders se ha desactivado correctamente");
+
+    system("taskkill /f /im CReminders.exe");
+    exit(1);
 }
 
 void errorExit(const TCHAR filePath[], const std::string &messageBoxPath, std::string errorTitle, std::string errorText){
@@ -202,7 +208,7 @@ std::string getDirectoryPath(const TCHAR filePath[], const int steps){
     return directoryPath;
 }
 
-bool findChars(const std::string &line, const std::string chars){
+bool findChars(const std::string &line, const std::string &chars){
 
     for(char c : chars)
         if (line.find(c) != std::string::npos)
@@ -554,7 +560,7 @@ int main(int argc, char *argv[]){
     }
 
     else if(argv[1] == std::string("deactivate") || argv[1] == std::string("desactivar"))
-        deactivate(value);
+        deactivate(value, messageBoxPath);
 
     else if(argv[1] == std::string("reset_en"))
         reset_txt(infoPath, messageBoxPath, notificationContent_list, days_list, hour_list, minute_list, true);
