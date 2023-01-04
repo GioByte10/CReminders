@@ -14,12 +14,11 @@
 <div align="center">
 
 [![licenseBadge]][licenseLink]
-[![releaseBadge]][releaseLink]
+
 
 [licenseBadge]: https://img.shields.io/github/license/GioByte10/CReminders?style=flat
 [licenseLink]: https://github.com/GioByte10/CReminders/blob/main/LICENSE
-[releaseBadge]: https://img.shields.io/github/v/release/GioByte10/CReminders?display_name=tag&label=install
-[releaseLink]: https://github.com/GioByte10/CReminders/releases
+
 </div>
 
 # English
