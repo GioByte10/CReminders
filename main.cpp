@@ -30,34 +30,6 @@ BOOL HandlerRoutine(DWORD fdwCtrlType) {
     }
 }
 
-bool checkAlreadyExists(const LPCSTR value){
-
-    HKEY checkKey;
-    LONG result = RegGetValueA(HKEY_CURRENT_USER, R"(SOFTWARE\Microsoft\Windows\CurrentVersion\Run)", value, RRF_RT_REG_SZ, nullptr, nullptr, nullptr);
-    RegCloseKey(checkKey);
-
-    if(result == ERROR_SUCCESS)
-        return true;
-
-    return false;
-}
-
-void addToRegistry(const LPCSTR value, const TCHAR filePath[]){
-
-    HKEY newKey;
-
-    RegOpenKey(HKEY_CURRENT_USER, R"(Software\Microsoft\Windows\CurrentVersion\Run)", &newKey);
-    LONG result = RegSetValueEx(newKey, value, 0, REG_SZ, (LPBYTE)filePath, lstrlen(filePath));
-    RegCloseKey(newKey);
-
-    if(result != ERROR_SUCCESS){
-        SetEvent(stopEvent);
-        ShellExecuteA(nullptr, "open", "https://github.com/GioByte10/CReminders/wiki", nullptr, nullptr, SW_SHOWMAXIMIZED);
-        MessageBox(nullptr, "Could not add to startup", "CReminders Error 0x00", MB_ICONERROR);
-        exit(1);
-    }
-}
-
 std::string patchSpaces(const std::string &line, const std::string &r){
 
     std::string newLine;
@@ -80,6 +52,36 @@ void myMessageBox(const std::string &messageBoxPath, std::string title, std::str
     std::string content = title + ' ' + text;
 
     ShellExecuteA(nullptr, "open", messageBoxPath.c_str(), content.c_str(), nullptr, SW_SHOW);
+
+}
+
+bool checkAlreadyExists(const LPCSTR value){
+
+    HKEY checkKey;
+    LONG result = RegGetValueA(HKEY_CURRENT_USER, R"(SOFTWARE\Microsoft\Windows\CurrentVersion\Run)", value, RRF_RT_REG_SZ, nullptr, nullptr, nullptr);
+    RegCloseKey(checkKey);
+
+    if(result == ERROR_SUCCESS)
+        return true;
+
+    return false;
+}
+
+void addToRegistry(const LPCSTR value, const TCHAR filePath[], const std::string messageBoxPath){
+
+    HKEY newKey;
+
+    RegOpenKey(HKEY_CURRENT_USER, R"(Software\Microsoft\Windows\CurrentVersion\Run)", &newKey);
+    LONG result = RegSetValueEx(newKey, value, 0, REG_SZ, (LPBYTE)filePath, lstrlen(filePath));
+    RegCloseKey(newKey);
+
+    if(result != ERROR_SUCCESS){
+        ShellExecuteA(nullptr, "open", "https://github.com/GioByte10/CReminders/wiki", nullptr, nullptr, SW_SHOWMAXIMIZED);
+        MessageBox(nullptr, "Could not add to startup", "CReminders Error 0x00", MB_ICONERROR);
+        exit(1);
+    }
+
+    myMessageBox(messageBoxPath, "CReminders", "Successfully set up / Instalado correctamente");
 
 }
 
@@ -503,16 +505,16 @@ int main(int argc, char *argv[]){
     TCHAR filePath[MAX_PATH];
     GetModuleFileName(nullptr, filePath, MAX_PATH);
 
-    if(!checkAlreadyExists(value))
-        addToRegistry(value, filePath);
-
-    time_t now = time(nullptr);
-    tm *ltm = localtime(&now);
-
     directoryPath = getDirectoryPath(filePath, 1);
     infoPath = directoryPath + R"(\info.txt)";
     notificationPath = directoryPath + R"(\ToastNotification\dist\toastNotification.exe)";
     messageBoxPath = directoryPath + R"(\ToastNotification\dist\messageBox.exe)";
+
+    if(!checkAlreadyExists(value))
+        addToRegistry(value, filePath, messageBoxPath);
+
+    time_t now = time(nullptr);
+    tm *ltm = localtime(&now);
 
     if(argc > 1 && argv[1] == std::string("error")){
         HANDLE fileChange;
