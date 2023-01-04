@@ -1,0 +1,28 @@
+1.- Move the .rar or .zip file to the location where you wish to set CReminders
+
+2.- Extract the file, you will be left with a [CReminders] folder
+
+3.- Go into that folder and run CReminders.exe
+
+4.- Modify the info.txt file to add your reminders
+
+----------------------------------------------------------------------------------
+
+Remember that commands.exe allows you to perform several useful features, such as:
+
+show	
+Quickly gives a preview of all reminders
+
+deactivate	
+Removes the program from the Registry and stops its execution. To reactivate it you must run CReminders.exe again
+
+reset en	
+Resets the info.txt file to its original state, in english. Note that this will delete all the reminders that you created
+
+----------------------------------------------------------------------------------
+
+If you have any question/suggestion/problem/etc, you can send an email to gvanni.bernal10@gmail.com
+or fill out this feedback form at: https://forms.gle/6A2fwbND7u2C9yGb8
+
+The code of this project can be found here:
+https://github.com/GioByte10/CReminders
