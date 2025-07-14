@@ -45,28 +45,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CReminders::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CReminders-Debug-60a09f70fdb1251689d8.json",
+					"jsonFile" : "target-CReminders-Debug-e1e35376f15073453c36.json",
 					"name" : "CReminders",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "commands::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-commands-Debug-814ab21ede4465f6973d.json",
+					"jsonFile" : "target-commands-Debug-e686dc85faa011905345.json",
 					"name" : "commands",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "messageBox::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-messageBox-Debug-5108e8ba6ac6e4f6c74f.json",
+					"jsonFile" : "target-messageBox-Debug-7edc66b483fac70bf27d.json",
 					"name" : "messageBox",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test-Debug-0a6598078e65577c8c69.json",
+					"jsonFile" : "target-test-Debug-379e62507b9e3dcf2e32.json",
 					"name" : "test",
 					"projectIndex" : 0
 				}
@@ -82,6 +82,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }
